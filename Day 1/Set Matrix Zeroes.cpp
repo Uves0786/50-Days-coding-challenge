@@ -37,35 +37,8 @@ public:
             }
                 
         }
-        for (int i = 0; i <m.size(); i++)
-        {
-            for (int j = 0; j<m[0].size(); j++)
-            {
-                cout << m[i][j] << " ";
-            }
-            
-        }
-        cout << endl;
         
     }
     
 };
  
-    int main()
-    {
-        int n;
-        vector<vector<int>>m;
-        cin >> n;
-        for(int i=0;i<n;i++)
-        {
-           for (int j = 0; j <n; j++)
-           {
-               int temp;
-              cin >> temp;
-              m.push_back(temp);
-           }
-           
-        }
-        Solution ob;
-        ob.setZeroes(m);
-    }
