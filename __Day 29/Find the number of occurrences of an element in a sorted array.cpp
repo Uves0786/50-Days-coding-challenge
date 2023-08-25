@@ -1,0 +1,66 @@
+#include <bits/stdc++.h>
+using namespace std;
+int first(vector<int> nums, int target)
+{
+    int ans = -1;
+    int start = 0;
+    int end = nums.size() - 1;
+    int mid = start + (end - start) / 2;
+    while (start <= end)
+    {
+        if (nums[mid] == target)
+        {
+            ans = mid;
+            end = mid - 1;
+        }
+        else if (nums[mid] < target)
+        {
+            start = mid + 1;
+        }
+        else
+        {
+            end = mid - 1;
+        }
+        mid = start + (end - start) / 2;
+    }
+    return ans;
+}
+int second(vector<int> nums, int target)
+{
+    int ans = -1;
+    int start = 0;
+    int end = nums.size() - 1;
+    int mid = start + (end - start) / 2;
+    while (start <= end)
+    {
+        if (nums[mid] == target)
+        {
+            ans = mid;
+            start = mid + 1;
+        }
+        else if (nums[mid] < target)
+        {
+            start = mid + 1;
+        }
+        else
+        {
+            end = mid - 1;
+        }
+        mid = start + (end - start) / 2;
+    }
+    return ans;
+}
+// vector<int> searchRange(vector<int>& nums, int target)
+int main()
+{
+    vector<int> nums = {1, 2, 8, 8, 8, 8, 5};
+    int target = 8;
+    // vector<int>ans;
+    int first_ourr = first(nums, target);
+    int second_ourr = second(nums, target);
+    int total_ourr = (second_ourr - first_ourr) + 1;
+    cout << total_ourr << endl;
+    //         ans.push_back(first_ourr);
+    //         ans.push_back(second_ourr);
+    // return ans;
+}

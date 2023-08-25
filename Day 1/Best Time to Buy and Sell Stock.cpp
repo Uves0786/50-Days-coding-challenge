@@ -27,3 +27,4 @@ public:
         Solution ob;
         cout<<ob.maxProfit(arr,n)<<endl;
     }
+
